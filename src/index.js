@@ -1,31 +1,23 @@
-import readlineSync from 'readline-sync';
+import getPlayerName from './games/brain-games.js';
 
-export const greeting = () => {
-  const playerName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${playerName}`);
-  return (playerName);
-};
+const startGame = (game, descriptionGame) => {
+    const playerName = getPlayerName();
+    const numberOfRounds = 3;
+    
+    console.log(descriptionGame);
 
-export const brainEven = (playerName) => {
-  const isEven = (number) => (number % 2 === 0);
-  const correctAnswer = (number) => (isEven(number) ? 'yes' : 'no');
+    for (let currentRound = 1; currentRound < numberOfRounds; currentRound += 1) {
+        let outGame = game();
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  for (let i = 0; i < 3; i += 1) {
-    const number = Math.floor(Math.random() * 100);
-    const answer = correctAnswer(number);
-
-    console.log(`Question: ${number}`);
-    const playerAnswer = readlineSync.question('Your answer: ');
-
-    if (answer === playerAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${playerAnswer}" is wrong answer ;(.Correct answer was "${answer}".`);
-      console.log(`Let's try again, ${playerName}!`);
-      return;
+        if (outGame === 'win') {
+            console.log('Correct!')
+        } else if (outGame === 'defeat') {
+            console.log(`Let's try again, ${playerName}!`);
+            return;
+        }
     }
-  }
 
-  console.log(`Congratulations, ${playerName}!`);
+    console.log(`Congratulations, ${playerName}!`);
 };
+
+export default startGame;

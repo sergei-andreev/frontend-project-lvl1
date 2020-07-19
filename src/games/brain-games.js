@@ -6,6 +6,6 @@ export default () => {
 
     const playerName = readlineSync.question(`${welcomeText}\n${askNameText}`);
     console.log(`Hello, ${playerName}`);
-    
+
     return (playerName);
 };

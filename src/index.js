@@ -6,7 +6,7 @@ const startGame = (game, descriptionGame) => {
     
     console.log(descriptionGame);
 
-    for (let currentRound = 1; currentRound < numberOfRounds; currentRound += 1) {
+    for (let currentRound = 1; currentRound <= numberOfRounds; currentRound += 1) {
         let outGame = game();
 
         if (outGame === 'win') {

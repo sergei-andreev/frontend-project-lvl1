@@ -18,7 +18,7 @@ const getRandomNumber = () => Math.floor(Math.random() * 100);
 
 const descriptionGame = 'Find the greatest common divisor of given numbers.';
 
-const brainCalc = () => {
+const brainGcd = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const answer = getCorrectAnswer(firstNumber, secondNumber);
@@ -34,4 +34,4 @@ const brainCalc = () => {
   return 'defeat';
 };
 
-export default startGame(brainCalc, descriptionGame);
+export default startGame(brainGcd, descriptionGame);

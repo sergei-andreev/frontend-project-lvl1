@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
 import startGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getCorrectAnswer = (firstNumber, secondNumber, operator) => {
   switch (operator) {
@@ -13,26 +13,26 @@ const getCorrectAnswer = (firstNumber, secondNumber, operator) => {
       return 0;
   }
 };
-const getRandomNumber = () => Math.floor(Math.random() * 10);
-const getRandomOperator = () => '+-*'[Math.floor(Math.random() * 3)];
+
+const mathOperators = '+-*';
+const getRandomOperator = () => mathOperators[getRandomNumber(3)];
 
 const descriptionGame = 'What is the result of the expression?';
+const numberOfRounds = 3;
 
 const brainCalc = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
   const operator = getRandomOperator();
+
+  const question = `Question: ${firstNumber} ${operator} ${secondNumber}`;
   const answer = getCorrectAnswer(firstNumber, secondNumber, operator);
 
-  console.log(`Question: ${firstNumber} ${operator} ${secondNumber}`);
-  const playerAnswer = (readlineSync.question('Your answer: ')).toLowerCase();
-
-  if (answer === Number(playerAnswer)) {
-    return 'win';
-  }
-
-  console.log(`"${playerAnswer}" is wrong answer ;(.Correct answer was "${answer}".`);
-  return 'defeat';
+  return { answer, question };
 };
 
-export default startGame(brainCalc, descriptionGame);
+const initGame = () => {
+  startGame(brainCalc, descriptionGame, numberOfRounds);
+};
+
+export default initGame;

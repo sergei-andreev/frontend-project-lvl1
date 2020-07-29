@@ -1,7 +1,7 @@
-import readlineSync from 'readline-sync';
 import startGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const getCorrectAnswer = (firstNumber, secondNumber) => {
+const getGcd = (firstNumber, secondNumber) => {
   let a = firstNumber;
   let b = secondNumber;
 
@@ -14,24 +14,21 @@ const getCorrectAnswer = (firstNumber, secondNumber) => {
   }
   return a;
 };
-const getRandomNumber = () => Math.floor(Math.random() * 100);
 
 const descriptionGame = 'Find the greatest common divisor of given numbers.';
+const numberOfRounds = 3;
 
 const brainGcd = () => {
   const firstNumber = getRandomNumber();
   const secondNumber = getRandomNumber();
-  const answer = getCorrectAnswer(firstNumber, secondNumber);
+  const answer = getGcd(firstNumber, secondNumber);
+  const question = `Question: ${firstNumber} ${secondNumber} (${answer})`;
 
-  console.log(`Question: ${firstNumber} ${secondNumber} (${answer})`);
-  const playerAnswer = (readlineSync.question('Your answer: ')).toLowerCase();
-
-  if (answer === Number(playerAnswer)) {
-    return 'win';
-  }
-
-  console.log(`"${playerAnswer}" is wrong answer ;(.Correct answer was "${answer}".`);
-  return 'defeat';
+  return { answer, question };
 };
 
-export default startGame(brainGcd, descriptionGame);
+const initGame = () => {
+  startGame(brainGcd, descriptionGame, numberOfRounds);
+};
+
+export default initGame;

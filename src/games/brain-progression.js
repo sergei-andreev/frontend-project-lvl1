@@ -1,10 +1,10 @@
-import readlineSync from 'readline-sync';
 import startGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getProgression = () => {
-  const startValue = Math.floor(Math.random() * 10);
-  const step = Math.floor(Math.random() * 10);
-  const hideElement = Math.floor(Math.random() * 10);
+  const startValue = getRandomNumber();
+  const step = getRandomNumber();
+  const hideElement = getRandomNumber();
   const progressionArr = [];
   let result;
 
@@ -23,19 +23,17 @@ const getProgression = () => {
 };
 
 const descriptionGame = 'What number is missing in the progression?';
+const numberOfRounds = 3;
 
 const brainProgression = () => {
   const [progression, answer] = getProgression();
+  const question = `Question: ${progression}`;
 
-  console.log(`Question: ${progression}`);
-  const playerAnswer = (readlineSync.question('Your answer: ')).toLowerCase();
-
-  if (answer === Number(playerAnswer)) {
-    return 'win';
-  }
-
-  console.log(`"${playerAnswer}" is wrong answer ;(.Correct answer was "${answer}".`);
-  return 'defeat';
+  return { answer, question };
 };
 
-export default startGame(brainProgression, descriptionGame);
+const initGame = () => {
+  startGame(brainProgression, descriptionGame, numberOfRounds);
+};
+
+export default initGame;

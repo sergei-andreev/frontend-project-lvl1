@@ -1,36 +1,32 @@
-import readlineSync from 'readline-sync';
 import startGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isPrime = (number) => {
-  if (number > 1) {
-    for (let i = 2; i < number; i += 1) {
-      if (number % i === 0) {
-        return false;
-      }
+  if (number < 2) return false;
+
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return false;
     }
-    return true;
   }
 
-  return false;
+  return true;
 };
 const getCorrectAnswer = (number) => (isPrime(number) ? 'yes' : 'no');
-const getRandomNumber = () => Math.floor(Math.random() * 100);
 
 const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const numberOfRounds = 3;
 
 const brainPrime = () => {
   const number = getRandomNumber();
   const answer = getCorrectAnswer(number);
+  const question = `Question: ${number}`;
 
-  console.log(`Question: ${number}`);
-  const playerAnswer = (readlineSync.question('Your answer: ')).toLowerCase();
-
-  if (answer === playerAnswer) {
-    return 'win';
-  }
-
-  console.log(`"${playerAnswer}" is wrong answer ;(.Correct answer was "${answer}".`);
-  return 'defeat';
+  return { answer, question };
 };
 
-export default startGame(brainPrime, descriptionGame);
+const initGame = () => {
+  startGame(brainPrime, descriptionGame, numberOfRounds);
+};
+
+export default initGame;

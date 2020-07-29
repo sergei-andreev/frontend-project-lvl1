@@ -1,17 +1,22 @@
-import getPlayerName from './games/brain-games.js';
+import readlineSync from 'readline-sync';
 
-const startGame = (game, descriptionGame) => {
-  const playerName = getPlayerName();
-  const numberOfRounds = 3;
+const startGame = (game, descriptionGame, numberOfRounds) => {
+  console.log('Welcome to the Brain Games!');
+  const playerName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${playerName}`);
 
   console.log(descriptionGame);
 
   for (let currentRound = 1; currentRound <= numberOfRounds; currentRound += 1) {
-    const outGame = game();
+    const { answer, question } = game();
 
-    if (outGame === 'win') {
+    console.log(question);
+    const playerAnswer = readlineSync.question('Your answer: ').toLowerCase();
+
+    if (String(playerAnswer) === String(answer)) {
       console.log('Correct!');
-    } else if (outGame === 'defeat') {
+    } else {
+      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
       console.log(`Let's try again, ${playerName}!`);
       return;
     }

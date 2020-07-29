@@ -1,5 +1,6 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-![Node.js CI](https://github.com/sergei-andreev/frontend-project-lvl1/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/131c8aa1bd3537abcec1/maintainability)](https://codeclimate.com/github/sergei-andreev/frontend-project-lvl1/maintainability)
+
+[![Node.js CI](https://github.com/sergei-andreev/frontend-project-lvl1/workflows/Node.js%20CI/badge.svg)](https://github.com/sergei-andreev/frontend-project-lvl1/actions?query=workflow%3A%22Node.js+CI%22)
 
 Brain-even
 [![asciicast](https://asciinema.org/a/JZFE388V0iIIcobDq1b6RyHAG.svg)](https://asciinema.org/a/JZFE388V0iIIcobDq1b6RyHAG)

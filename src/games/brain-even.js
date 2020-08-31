@@ -9,7 +9,7 @@ const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "n
 const getGameData = () => {
   const number = getRandomNumber(0, 10);
   const answer = getCorrectAnswer(number);
-  const question = `Question: ${number}`;
+  const question = String(number);
 
   return { answer, question };
 };

@@ -19,7 +19,7 @@ const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer
 const getGameData = () => {
   const number = getRandomNumber(0, 10);
   const answer = getCorrectAnswer(number);
-  const question = `Question: ${number}`;
+  const question = String(number);
 
   return { answer, question };
 };

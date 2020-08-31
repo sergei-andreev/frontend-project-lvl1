@@ -12,7 +12,7 @@ const startGame = (getGameData, descriptionGame) => {
   for (let currentRound = 1; currentRound <= numberOfRounds; currentRound += 1) {
     const { answer, question } = getGameData();
 
-    console.log(question);
+    console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ').toLowerCase();
 
     if (playerAnswer !== answer) {

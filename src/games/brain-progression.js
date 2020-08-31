@@ -12,7 +12,7 @@ const getProgression = () => {
     const nextValue = startValue + (step * i);
 
     if (hideElement === i) {
-      result = nextValue;
+      result = String(nextValue);
       progressionArr.push('..');
     } else {
       progressionArr.push(nextValue);
@@ -26,7 +26,7 @@ const descriptionGame = 'What number is missing in the progression?';
 
 const getGameData = () => {
   const [progression, answer] = getProgression();
-  const question = `Question: ${progression}`;
+  const question = progression;
 
   return { answer, question };
 };

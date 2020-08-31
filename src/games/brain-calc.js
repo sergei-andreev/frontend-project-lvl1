@@ -24,7 +24,7 @@ const getGameData = () => {
   const secondNumber = getRandomNumber(0, 10);
   const operator = getRandomOperator();
 
-  const question = `Question: ${firstNumber} ${operator} ${secondNumber}`;
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
   const answer = getCorrectAnswer(firstNumber, secondNumber, operator);
 
   return { answer, question };

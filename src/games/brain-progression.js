@@ -24,7 +24,7 @@ const getProgression = () => {
 
 const descriptionGame = 'What number is missing in the progression?';
 
-const brainProgression = () => {
+const getGameData = () => {
   const [progression, answer] = getProgression();
   const question = `Question: ${progression}`;
 
@@ -32,7 +32,7 @@ const brainProgression = () => {
 };
 
 const initGame = () => {
-  startGame(brainProgression, descriptionGame);
+  startGame(getGameData, descriptionGame);
 };
 
 export default initGame;

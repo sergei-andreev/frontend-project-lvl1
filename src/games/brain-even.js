@@ -6,7 +6,7 @@ const getCorrectAnswer = (number) => (isEven(number) ? 'yes' : 'no');
 
 const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const brainEven = () => {
+const getGameData = () => {
   const number = getRandomNumber(0, 10);
   const answer = getCorrectAnswer(number);
   const question = `Question: ${number}`;
@@ -15,7 +15,7 @@ const brainEven = () => {
 };
 
 const initGame = () => {
-  startGame(brainEven, descriptionGame);
+  startGame(getGameData, descriptionGame);
 };
 
 export default initGame;

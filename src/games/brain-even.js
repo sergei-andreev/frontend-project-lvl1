@@ -8,7 +8,7 @@ const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "n
 const numberOfRounds = 3;
 
 const brainEven = () => {
-  const number = getRandomNumber();
+  const number = getRandomNumber(0, 10);
   const answer = getCorrectAnswer(number);
   const question = `Question: ${number}`;
 

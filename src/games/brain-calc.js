@@ -15,14 +15,14 @@ const getCorrectAnswer = (firstNumber, secondNumber, operator) => {
 };
 
 const mathOperators = '+-*';
-const getRandomOperator = () => mathOperators[getRandomNumber(3)];
+const getRandomOperator = () => mathOperators[getRandomNumber(0, 2)];
 
 const descriptionGame = 'What is the result of the expression?';
 const numberOfRounds = 3;
 
 const brainCalc = () => {
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = getRandomNumber(0, 10);
+  const secondNumber = getRandomNumber(0, 10);
   const operator = getRandomOperator();
 
   const question = `Question: ${firstNumber} ${operator} ${secondNumber}`;

@@ -2,9 +2,9 @@ import startGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const getProgression = () => {
-  const startValue = getRandomNumber();
-  const step = getRandomNumber();
-  const hideElement = getRandomNumber();
+  const startValue = getRandomNumber(0, 10);
+  const step = getRandomNumber(0, 10);
+  const hideElement = getRandomNumber(0, 10);
   const progressionArr = [];
   let result;
 

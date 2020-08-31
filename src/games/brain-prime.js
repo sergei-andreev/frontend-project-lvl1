@@ -18,7 +18,7 @@ const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer
 const numberOfRounds = 3;
 
 const brainPrime = () => {
-  const number = getRandomNumber();
+  const number = getRandomNumber(0, 10);
   const answer = getCorrectAnswer(number);
   const question = `Question: ${number}`;
 

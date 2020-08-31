@@ -19,8 +19,8 @@ const descriptionGame = 'Find the greatest common divisor of given numbers.';
 const numberOfRounds = 3;
 
 const brainGcd = () => {
-  const firstNumber = getRandomNumber();
-  const secondNumber = getRandomNumber();
+  const firstNumber = getRandomNumber(0, 10);
+  const secondNumber = getRandomNumber(0, 10);
   const answer = getGcd(firstNumber, secondNumber);
   const question = `Question: ${firstNumber} ${secondNumber} (${answer})`;
 

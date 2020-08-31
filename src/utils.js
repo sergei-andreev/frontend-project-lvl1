@@ -1,2 +1,6 @@
-const getRandomNumber = (maxRandomNumber = 10) => Math.floor(Math.random() * maxRandomNumber);
+const getRandomNumber = (startNumber, finishNumber) => {
+  const amountNumbers = (finishNumber - startNumber) + 1;
+  return startNumber + Math.floor(Math.random() * amountNumbers);
+};
+
 export default getRandomNumber;

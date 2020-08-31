@@ -15,13 +15,13 @@ const startGame = (game, descriptionGame) => {
     console.log(question);
     const playerAnswer = readlineSync.question('Your answer: ').toLowerCase();
 
-    if (playerAnswer === answer) {
-      console.log('Correct!');
-    } else {
+    if (playerAnswer !== answer) {
       console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
       console.log(`Let's try again, ${playerName}!`);
       return;
     }
+
+    console.log('Correct!');
   }
 
   console.log(`Congratulations, ${playerName}!`);

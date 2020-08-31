@@ -10,7 +10,7 @@ const getCorrectAnswer = (firstNumber, secondNumber, operator) => {
     case '*':
       return String(firstNumber * secondNumber);
     default:
-      return '';
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 

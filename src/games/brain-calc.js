@@ -18,7 +18,6 @@ const mathOperators = '+-*';
 const getRandomOperator = () => mathOperators[getRandomNumber(0, 2)];
 
 const descriptionGame = 'What is the result of the expression?';
-const numberOfRounds = 3;
 
 const brainCalc = () => {
   const firstNumber = getRandomNumber(0, 10);
@@ -32,7 +31,7 @@ const brainCalc = () => {
 };
 
 const initGame = () => {
-  startGame(brainCalc, descriptionGame, numberOfRounds);
+  startGame(brainCalc, descriptionGame);
 };
 
 export default initGame;

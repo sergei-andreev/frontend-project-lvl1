@@ -15,7 +15,6 @@ const isPrime = (number) => {
 const getCorrectAnswer = (number) => (isPrime(number) ? 'yes' : 'no');
 
 const descriptionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const numberOfRounds = 3;
 
 const brainPrime = () => {
   const number = getRandomNumber(0, 10);
@@ -26,7 +25,7 @@ const brainPrime = () => {
 };
 
 const initGame = () => {
-  startGame(brainPrime, descriptionGame, numberOfRounds);
+  startGame(brainPrime, descriptionGame);
 };
 
 export default initGame;

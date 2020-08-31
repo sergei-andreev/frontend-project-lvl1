@@ -23,7 +23,6 @@ const getProgression = () => {
 };
 
 const descriptionGame = 'What number is missing in the progression?';
-const numberOfRounds = 3;
 
 const brainProgression = () => {
   const [progression, answer] = getProgression();
@@ -33,7 +32,7 @@ const brainProgression = () => {
 };
 
 const initGame = () => {
-  startGame(brainProgression, descriptionGame, numberOfRounds);
+  startGame(brainProgression, descriptionGame);
 };
 
 export default initGame;

@@ -15,7 +15,7 @@ const getCorrectAnswer = (firstNumber, secondNumber, operator) => {
 };
 
 const mathOperators = '+-*';
-const getRandomOperator = () => mathOperators[getRandomNumber(0, 2)];
+const getRandomOperator = () => mathOperators[getRandomNumber(0, mathOperators.length)];
 
 const descriptionGame = 'What is the result of the expression?';
 

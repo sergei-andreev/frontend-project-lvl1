@@ -12,7 +12,7 @@ const getGcd = (firstNumber, secondNumber) => {
       b -= a;
     }
   }
-  return a;
+  return String(a);
 };
 
 const descriptionGame = 'Find the greatest common divisor of given numbers.';

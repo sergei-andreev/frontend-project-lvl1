@@ -4,13 +4,13 @@ import getRandomNumber from '../utils.js';
 const getCorrectAnswer = (firstNumber, secondNumber, operator) => {
   switch (operator) {
     case '+':
-      return firstNumber + secondNumber;
+      return String(firstNumber + secondNumber);
     case '-':
-      return firstNumber - secondNumber;
+      return String(firstNumber - secondNumber);
     case '*':
-      return firstNumber * secondNumber;
+      return String(firstNumber * secondNumber);
     default:
-      return 0;
+      return '';
   }
 };
 

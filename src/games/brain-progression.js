@@ -29,8 +29,8 @@ const getGameData = () => {
   return { answer, question };
 };
 
-const initGame = () => {
+const startEngine = () => {
   startGame(getGameData, descriptionGame);
 };
 
-export default initGame;
+export default startEngine;

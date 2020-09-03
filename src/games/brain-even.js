@@ -9,13 +9,13 @@ const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "n
 const getGameData = () => {
   const number = getRandomNumber(0, 10);
   const answer = getCorrectAnswer(number);
-  const question = String(number);
+  const question = number.toString();
 
   return { answer, question };
 };
 
-const initGame = () => {
+const startEngine = () => {
   startGame(getGameData, descriptionGame);
 };
 
-export default initGame;
+export default startEngine;
